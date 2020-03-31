@@ -1,9 +1,11 @@
+@import '../../App.scss';
+
 .list-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #F24141;
+    background: #fff;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
