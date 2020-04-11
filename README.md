@@ -1,1 +1,1 @@
-![Application UI]('./src/images/view.png')
+![Application UI](./src/images/view.png)
