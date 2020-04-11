@@ -9,7 +9,7 @@ const ListItem = ({dates, num, isLoading, handleClick, children}) => {
     return (
         <div className = 'list-item'>
             {
-                isLoading ?
+            isLoading ?
                 <Loader />
                 :
                 <Fragment>

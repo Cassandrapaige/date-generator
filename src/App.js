@@ -11,25 +11,21 @@ const App = () => {
   const [data, setData] = useState(ALL_DATES)
   const [isLoading, setIsLoading] = useState(false)
 
-  const randomNumber = Math.floor(Math.random() * data.length - 1);
+  const randomNumber = Math.floor(Math.random() * data.length);
   
   useEffect(() => {loadData()},[data])
 
   const loadData = () => {
-    try {
       setIsLoading(true)
       setNum(randomNumber)
       setTimeout(() => {
         setIsLoading(false)
       }, 2000)
-    } catch (error) {
-      console.log(error)
-    }
   }
 
-  const changeView = type => setData(type);
+  const changeView = type => setData(type)
 
-  const handleClick = () => loadData();
+  const handleClick = () => loadData()
 
    return (
     <div className='App'>
@@ -44,7 +40,7 @@ const App = () => {
         <div className='buttons'>
             <button onClick = {() => {changeView(INDOOR_DATES)}}>Indoors</button>
             <button onClick = {() => {changeView(OUTDOOR_DATES)}}>Outdoors</button>
-            <button className= 'active' onClick = {() => {changeView(ALL_DATES)}}>Together</button>
+            <button className='active' onClick = {() => {changeView(ALL_DATES)}}>Together</button>
         </div>
 
       </ListContainer>
