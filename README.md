@@ -1,1 +1,0 @@
-![Application UI]('./images/view.png')
