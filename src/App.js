@@ -5,11 +5,12 @@ import './App.scss';
 import {ALL_DATES, INDOOR_DATES, OUTDOOR_DATES} from './data/dates.data'
 
 import ListContainer from './components/list-container/list-container.component'
+import CutomButton from './components/custom-button/custom-button.component';
 
 const App = () => {
-  const [num, setNum] = useState(0)
-  const [data, setData] = useState(ALL_DATES)
-  const [isLoading, setIsLoading] = useState(false)
+  const [num, setNum] = useState(0);
+  const [data, setData] = useState(ALL_DATES);
+  const [isLoading, setIsLoading] = useState(false);
 
   const randomNumber = Math.floor(Math.random() * data.length);
   
@@ -23,7 +24,7 @@ const App = () => {
       }, 2000)
   }
 
-  const changeView = type => setData(type)
+  const changeView = type => setData(type);
 
   const handleClick = () => loadData()
 
@@ -38,9 +39,21 @@ const App = () => {
         >
 
         <div className='buttons'>
-            <button onClick = {() => {changeView(INDOOR_DATES)}}>Indoors</button>
-            <button onClick = {() => {changeView(OUTDOOR_DATES)}}>Outdoors</button>
-            <button className='active' onClick = {() => {changeView(ALL_DATES)}}>Together</button>
+            <CutomButton
+              handleClick = {() => changeView(INDOOR_DATES)}
+              text = "Indoors"
+              isActive = {data === INDOOR_DATES}
+            />
+            <CutomButton
+              handleClick = {() => changeView(OUTDOOR_DATES)}
+              text = "Outdoors"
+              isActive = {data === OUTDOOR_DATES}
+            />
+            <CutomButton
+              handleClick = {() => changeView(ALL_DATES)}
+              text = "Together"
+              isActive = {data === ALL_DATES}
+            />
         </div>
 
       </ListContainer>
